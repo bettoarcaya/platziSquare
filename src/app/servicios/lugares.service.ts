@@ -13,8 +13,14 @@ export class LugaresService{
         {id: 6, plan: 'gratuito', cercania: 3, distancia: 120, active: false, nombre:'Zapatería el Clavo'},
     ];
 
+    public constructor(private http: Http){ }
+
     public getLugares(){
         return this.lugares;
+    }
+    //obtenemos direccion desde la api de google maps
+    public getGeoData(direccion){
+        return this.http.get('http://maps.google.com/maps/api/geocode/json?address='+direccion);
     }
 
 
