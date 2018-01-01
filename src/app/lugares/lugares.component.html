@@ -1,0 +1,19 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <ng-container *ngFor="let lugar of lugares">
+        <ul class="list-group">
+          <a routerLink=''><li class="list-group-item">{{lugar.nombre}}</li></a>
+          <button class="btn btn-primary">Editar</button>
+          <button class="btn btn-danger">Eliminar</button>
+        </ul>
+      </ng-container>
+    </div>
+    <div class="col-md-4">
+      <agm-map [latitude]="lat" [longitude]="lng">
+        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+      </agm-map>
+    </div>
+  </div>
+</div>

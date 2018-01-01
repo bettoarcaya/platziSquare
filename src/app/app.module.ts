@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import {FormsModule} from "@angular/forms";
 import {HttpModule} from "@angular/http";
 import {Routes, RouterModule} from "@angular/router";
+import {LugaresService} from "./servicios/lugares.service";
 
 
 /**components */
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { LugaresComponent } from './lugares/lugares.component';
 
 /**librerias */
 import { AgmCoreModule } from '@agm/core';
@@ -16,13 +18,15 @@ import { AgmCoreModule } from '@agm/core';
 const appRoutes: Routes = [
   {path:'', component: HomeComponent},
   {path:'Home', component: HomeComponent},
+  {path:'Lugares', component: LugaresComponent},
 ];
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    LugaresComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +38,7 @@ const appRoutes: Routes = [
     })
     
   ],
-  providers: [],
+  providers: [LugaresService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
