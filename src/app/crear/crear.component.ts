@@ -22,8 +22,21 @@ export class CrearComponent {
 
   public guardarLugar(){
     this.direccion = this.lugar.calle + this.lugar.ciudad + this.lugar.pais;
-    
-    this.lugaresService.setLugar(this.lugar);
+    this.lugaresService.getGeoData(this.direccion)
+      .subscribe((result) => {
+        this.lugar.lat = result.json().results[0].geometry.location.lat;
+        this.lugar.lng = result.json().results[0].geometry.location.lng;
+
+        if(this.id != '0'){
+          this.lugar = this.lugaresService.editarLugar(this.lugar); 
+        }else{
+          this.lugar.id = Date.now();
+          this.lugaresService.setLugar(this.lugar);
+        }
+
+        this.lugar = {}
+      });
+    //this.lugaresService.setLugar(this.lugar);
   }
 
 
