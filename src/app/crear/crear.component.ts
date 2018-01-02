@@ -28,7 +28,7 @@ export class CrearComponent {
         this.lugar.lng = result.json().results[0].geometry.location.lng;
 
         if(this.id != '0'){
-          this.lugar = this.lugaresService.editarLugar(this.lugar); 
+          this.lugar = this.lugaresService.editarLugar(this.lugar);
         }else{
           this.lugar.id = Date.now();
           this.lugaresService.setLugar(this.lugar);

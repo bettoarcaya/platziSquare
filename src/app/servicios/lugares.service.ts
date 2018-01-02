@@ -4,6 +4,7 @@ import {Http} from "@angular/http";
 @Injectable()
 
 export class LugaresService{
+    aux: any = null;
     lugares:any = [
         {id: 1, plan: 'pagado', cercania: 1, distancia: 1, nombre:'Florería la Gardenia'},
         {id: 2, plan: 'gratuito', cercania: 1, distancia: 1.8, nombre:'Donas la pasadita'},
@@ -12,14 +13,13 @@ export class LugaresService{
         {id: 5, plan: 'pagado', cercania: 3, distancia: 35, nombre:'Hotel la Gracia'},
         {id: 6, plan: 'gratuito', cercania: 3, distancia: 120, nombre:'Zapatería el Clavo'},
     ];
-    aux: any = null;
 
     public constructor(private http: Http){ }
     //obtenemos direccion desde la api de google maps
     public getGeoData(direccion){
         return this.http.get('http://maps.google.com/maps/api/geocode/json?address='+direccion);
     }
-
+    
     public getLugares(){
         return this.lugares;
     }
@@ -30,6 +30,7 @@ export class LugaresService{
     }
     public setLugar(lugar){
         this.lugares.push(lugar);
+        alert(lugar.nombre + " agregado correctamente!");
     }
     public editarLugar(lugEdit){
       this.lugares.filter((lugar) => {
@@ -39,13 +40,8 @@ export class LugaresService{
           lugar.plan = lugEdit.plan;
           lugar.distancia = lugEdit.distancia;
           lugar.cercania = lugEdit.cercania;
-          console.log(lugEdit, lugar);
-          
+          alert(lugar.nombre + " editado correctamente!");
         }
       });
-        
     }
-    
-
-
 }
