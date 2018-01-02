@@ -10,6 +10,7 @@ export class CrearComponent {
   title = 'PlatziSquare';
   lugar: any = {}
   id: any = null;
+  direccion: string = null;
 
   public constructor(private route: ActivatedRoute, private lugaresService: LugaresService){ 
     this.id = this.route.snapshot.params['id'];
@@ -18,4 +19,13 @@ export class CrearComponent {
       this.lugar = this.lugaresService.getLugar(this.id); 
     }
   }
+
+  public guardarLugar(){
+    this.direccion = this.lugar.calle + this.lugar.ciudad + this.lugar.pais;
+    
+    this.lugaresService.setLugar(this.lugar);
+  }
+
+
+
 }
