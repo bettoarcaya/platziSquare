@@ -18,6 +18,11 @@ export class LugaresService{
     public getLugares(){
         return this.lugares;
     }
+    public getLugar(id){
+        return this.lugares.filter((lugar) => {
+            return lugar.id == id;
+        })[0] || null;
+    }
     //obtenemos direccion desde la api de google maps
     public getGeoData(direccion){
         return this.http.get('http://maps.google.com/maps/api/geocode/json?address='+direccion);
