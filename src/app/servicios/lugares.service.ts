@@ -1,5 +1,7 @@
 import {Injectable} from "@angular/core";
 import {Http} from "@angular/http";
+import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
+import swal from 'sweetalert2';
 
 @Injectable()
 
@@ -30,7 +32,13 @@ export class LugaresService{
     }
     public setLugar(lugar){
         this.lugares.push(lugar);
-        alert(lugar.nombre + " agregado correctamente!");
+        //alert(lugar.nombre + " agregado correctamente!");
+        swal({
+            title: 'success!',
+            text: lugar.nombre + ' Agregado correctamente!',
+            type: 'success',
+            confirmButtonText: 'Ok'
+          });
     }
     public editarLugar(lugEdit){
       this.lugares.filter((lugar) => {
@@ -40,7 +48,12 @@ export class LugaresService{
           lugar.plan = lugEdit.plan;
           lugar.distancia = lugEdit.distancia;
           lugar.cercania = lugEdit.cercania;
-          alert(lugar.nombre + " editado correctamente!");
+          swal({
+            title: 'success!',
+            text: lugar.nombre + ' Editado correctamente!',
+            type: 'success',
+            confirmButtonText: 'Ok'
+          });
         }
       });
     }

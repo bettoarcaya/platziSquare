@@ -4,8 +4,10 @@ import { NgModule } from '@angular/core';
 import {FormsModule} from "@angular/forms";
 import {HttpModule} from "@angular/http";
 import {Routes, RouterModule} from "@angular/router";
-import {LugaresService} from "./servicios/lugares.service";
+import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
 
+/**servicios */
+import {LugaresService} from "./servicios/lugares.service";
 
 /**components */
 import { AppComponent } from './app.component';
@@ -35,6 +37,7 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
+    SweetAlert2Module.forRoot(),
     RouterModule.forRoot(appRoutes),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCGuqEpKPHOWXc99M0Va4fH4WwcCWm1T5s'
