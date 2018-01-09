@@ -18,6 +18,7 @@ import { CrearComponent } from './crear/crear.component';
 /**librerias */
 import { AgmCoreModule } from '@agm/core';
 
+
 const appRoutes: Routes = [
   {path:'', component: HomeComponent},
   {path:'Home', component: HomeComponent},
