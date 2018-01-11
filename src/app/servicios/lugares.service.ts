@@ -3,7 +3,7 @@ import {Http} from "@angular/http";
 import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
 import swal from 'sweetalert2';
 import { Router } from '@angular/router';
-import { AngularFirestore } from 'angularfire2/firestore';
+//import { AngularFirestore } from 'angularfire2/firestore';
 
 @Injectable()
 
@@ -18,7 +18,7 @@ export class LugaresService{
         {id: 6, plan: 'gratuito', cercania: 3, distancia: 120, nombre:'Zapatería el Clavo'},
     ];
 
-    public constructor(private http: Http, private router: Router, private afDB: AngularFirestore){ }
+    public constructor(private http: Http, private router: Router){ }
     //obtenemos direccion desde la api de google maps
     public getGeoData(direccion){
         return this.http.get('http://maps.google.com/maps/api/geocode/json?address='+direccion);
