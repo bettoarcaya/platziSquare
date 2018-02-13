@@ -12,12 +12,15 @@ export class CrearComponent {
   id: any = null;
   direccion: string = null;
 
-  public constructor(private route: ActivatedRoute, private lugaresService: LugaresService){ 
-    this.id = this.route.snapshot.params['id'];
+  public constructor(
+    private route: ActivatedRoute, 
+    private lugaresService: LugaresService){
+
+      this.id = this.route.snapshot.params['id'];
     
-    if(this.id != '0'){
-      this.lugar = this.lugaresService.getLugar(this.id); 
-    }
+      if(this.id != '0'){
+        this.lugar = this.lugaresService.getLugar(this.id); 
+      }
   }
 
   public guardarLugar(){

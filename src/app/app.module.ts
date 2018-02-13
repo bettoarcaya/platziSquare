@@ -17,10 +17,18 @@ import { CrearComponent } from './crear/crear.component';
 
 /**librerias */
 import { AgmCoreModule } from '@agm/core';
-/*import { AngularFireModule } from 'angularfire2';
-import { AngularFirestoreModule } from 'angularfire2/firestore';*/
-import { environment } from '../environments/environment';
+import { AngularFireModule } from 'angularfire2';
+/*import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { environment } from '../environments/environment';*/
 
+export const firebaseConfig = {
+  apiKey: "AIzaSyC64W5jrgQoQrUEodIlSN7l6ffs23GQFDQ",
+  authDomain: "platzisquare-1514551634848.firebaseapp.com",
+  databaseURL: "https://platzisquare-1514551634848.firebaseio.com",
+  projectId: "platzisquare-1514551634848",
+  storageBucket: "platzisquare-1514551634848.appspot.com",
+  messagingSenderId: "396356709411"
+};
 
 const appRoutes: Routes = [
   {path:'', component: HomeComponent},
@@ -41,6 +49,7 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
+    AngularFireModule.initializeApp(firebaseConfig),
     /*AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,*/ // imports firebase/firestore, only needed for database features
     SweetAlert2Module.forRoot(),

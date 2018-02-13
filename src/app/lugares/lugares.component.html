@@ -10,11 +10,10 @@
       <ng-container *ngFor="let lugar of lugares">
         <ul class="list-group">
           <li class="list-group-item">
-            <a routerLink=''>{{lugar.nombre}}</a>
-            <div class="pull-right">
-                <button routerLink="/Crear/{{lugar.id}}" class="btn btn-primary">Editar</button>
-                <button class="btn btn-danger">Eliminar</button>
-            </div>
+            {{lugar.nombre}}
+            <button routerLink='' class="pull-right btn btn-danger"><i class="glyphicon glyphicon-remove"></i></button>
+            <button routerLink="/Crear/{{lugar.id}}" class="pull-right btn btn-primary"><i class="glyphicon glyphicon-pencil"></i></button>
+            <button class="pull-right btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
           </li>
         </ul>
       </ng-container>
