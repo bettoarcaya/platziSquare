@@ -11,12 +11,12 @@ import { Router } from '@angular/router';
 export class LugaresService{
     aux: any = null;
     lugares:any = [
-        {id: 1, plan: 'pagado', cercania: 1, distancia: 1, nombre:'Florería la Gardenia'},
-        {id: 2, plan: 'gratuito', cercania: 1, distancia: 1.8, nombre:'Donas la pasadita'},
-        {id: 3, plan: 'gratuito', cercania: 2, distancia: 5, nombre:'Veterinaria Huellitas Felices'},
-        {id: 4, plan: 'gratuito', cercania: 3, distancia: 10, nombre:'Sushi Suhiroll'},
-        {id: 5, plan: 'pagado', cercania: 3, distancia: 35, nombre:'Hotel la Gracia'},
-        {id: 6, plan: 'gratuito', cercania: 3, distancia: 120, nombre:'Zapatería el Clavo'},
+        {id: 1, plan: 'pagado', cercania: 1, distancia: 1, nombre:'Florería la Gardenia', descripcion: "descripccion corta"},
+        {id: 2, plan: 'gratuito', cercania: 1, distancia: 1.8, nombre:'Donas la pasadita', descripcion: "descripccion corta"},
+        {id: 3, plan: 'gratuito', cercania: 2, distancia: 5, nombre:'Veterinaria Huellitas Felices', descripcion: "descripccion corta"},
+        {id: 4, plan: 'gratuito', cercania: 3, distancia: 10, nombre:'Sushi Suhiroll', descripcion: "descripccion corta"},
+        {id: 5, plan: 'pagado', cercania: 3, distancia: 35, nombre:'Hotel la Gracia', descripcion: "descripccion corta"},
+        {id: 6, plan: 'gratuito', cercania: 3, distancia: 120, nombre:'Zapatería el Clavo', descripcion: "descripccion corta"},
     ];
 
     public constructor(

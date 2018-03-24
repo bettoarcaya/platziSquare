@@ -4,11 +4,7 @@ import {LugaresService} from "../servicios/lugares.service";
 @Component({
   selector: 'app-lugares',
   templateUrl: './lugares.component.html',
-  styles: [`
-    agm-map {
-      height: 450px;
-    }`
-  ],
+  styleUrls: ['./lugares.component.css']
 })
 export class LugaresComponent {
   title = 'PlatziSquare';

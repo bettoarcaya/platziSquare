@@ -8,14 +8,18 @@
       <button routerLink="/Crear/0" class="btn btn-success">Agregar Lugar</button>
       <hr>
       <ng-container *ngFor="let lugar of lugares">
-        <ul class="list-group">
-          <li class="list-group-item">
-            {{lugar.nombre}}
-            <button routerLink='' class="pull-right btn btn-danger"><i class="glyphicon glyphicon-remove"></i></button>
-            <button routerLink="/Crear/{{lugar.id}}" class="pull-right btn btn-primary"><i class="glyphicon glyphicon-pencil"></i></button>
-            <button class="pull-right btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
-          </li>
-        </ul>
+        <div class="border">
+          <ul class="list-group">
+            <li class="list-group-item">
+              {{lugar.nombre}}
+              <button routerLink='' class="pull-right btn btn-danger"><i class="glyphicon glyphicon-remove"></i></button>
+              <button routerLink="/Crear/{{lugar.id}}" class="pull-right btn btn-primary"><i class="glyphicon glyphicon-pencil"></i></button>
+              <button class="pull-right btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+              <br>
+              {{lugar.descripcion}}
+            </li>
+          </ul>
+        </div>
       </ng-container>
     </div>
     <div class="col-md-4">
