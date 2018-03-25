@@ -18,17 +18,19 @@ import { CrearComponent } from './crear/crear.component';
 /**librerias */
 import { AgmCoreModule } from '@agm/core';
 import { AngularFireModule } from 'angularfire2';
-/*import { AngularFirestoreModule } from 'angularfire2/firestore';
-import { environment } from '../environments/environment';*/
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireStorageModule } from 'angularfire2/storage';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { environment } from '../environments/environment';
 
-export const firebaseConfig = {
+/*export const firebaseConfig = {
   apiKey: "AIzaSyC64W5jrgQoQrUEodIlSN7l6ffs23GQFDQ",
   authDomain: "platzisquare-1514551634848.firebaseapp.com",
   databaseURL: "https://platzisquare-1514551634848.firebaseio.com",
   projectId: "platzisquare-1514551634848",
   storageBucket: "platzisquare-1514551634848.appspot.com",
   messagingSenderId: "396356709411"
-};
+};*/
 
 const appRoutes: Routes = [
   {path:'', component: HomeComponent},
@@ -49,9 +51,10 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    AngularFireModule.initializeApp(firebaseConfig),
-    /*AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,*/ // imports firebase/firestore, only needed for database features
+    AngularFireModule.initializeApp(environment.firebase, 'my-app-name'), // imports firebase/app needed for everything
+    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
+    AngularFireStorageModule, // imports firebase/storage only needed for storage features,
     SweetAlert2Module.forRoot(),
     RouterModule.forRoot(appRoutes),
     AgmCoreModule.forRoot({
